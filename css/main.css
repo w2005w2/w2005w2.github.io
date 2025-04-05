@@ -2239,22 +2239,3 @@ input[type=checkbox] {
     margin-left: 1rem;
   }
 }
-/* 静态文字样式 */
-.static-slogan {
-  font-size: 24px; /* 字体大小 */
-  color: #fff; /* 文字颜色，根据背景调整 */
-  margin-bottom: 20px; /* 与逐字展现文字的间距 */
-  text-align: center; /* 居中对齐 */
-}
-/* 逐字展现的文字样式 */
-.dynamic-title {
-  font-size: 18px; /* 字体大小 */
-  color: #fff; /* 文字颜色，根据背景调整 */
-  text-align: center; /* 居中对齐 */
-}
-/* home-slogan 区域样式 */
-.home-slogan {
-  text-align: center; /* 确保整个区域居中 */
-  margin-top: 50px; /* 根据需要调整顶部间距 */
-  margin-bottom: 50px; /* 根据需要调整底部间距 */
-}
