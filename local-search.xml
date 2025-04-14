@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）</title>
+    <link href="/2025/04/14/%E8%A7%A3%E5%86%B3redis%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88Cannot%20connect%20to%20server%20&#39;localhost&#39;.Check%20log%20for%20details.%EF%BC%89/"/>
+    <url>/2025/04/14/%E8%A7%A3%E5%86%B3redis%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88Cannot%20connect%20to%20server%20&#39;localhost&#39;.Check%20log%20for%20details.%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<p><strong>错误截图：</strong><br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414210212196.png" alt="image.png"></p><p><strong>解决方案：</strong><br>检查redis的redis-server.exe是否启动，如果没启动则不会运行。</p><p><strong>如何启动：</strong><br>找到redis的安装目录，在路径下启动cmd，然后输入如下指令：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">redis-server<span class="hljs-selector-class">.exe</span> redis<span class="hljs-selector-class">.windows</span>.conf<br></code></pre></td></tr></table></figure><p><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414210826597.png" alt="image.png"></p><p>如果出现下图这样，则证明启动成功。<br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414211007762.png" alt="image.png"></p><p>如果跟我一样，出现如下错误：<br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414204345825.png" alt="image.png"></p><p>那么还需要进行如下操作（依然在redis路径下输入指令）：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk">redis-cli.exe<br>auth 你设置的密码   <span class="hljs-regexp">//</span>如果你没有设置密码则不需要执行这一步<br>shutdown<br><span class="hljs-keyword">exit</span><br>redis-server.exe redis.windows.conf<br></code></pre></td></tr></table></figure><p>最后就可以成功启动edis-server.exe，同时redis也可以成功加载数据库。<br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414211516273.png" alt="image.png"></p><p>永远不要因承认错误而感到羞耻，因为承认错误也可以解释作你今天更聪敏。——马罗</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>redis</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>从零开始：使用 GitHub + Hexo + Fluid 搭建个性化博客（附魔改与使用教程）</title>
     <link href="/2025/04/05/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%EF%BC%9A%E4%BD%BF%E7%94%A8%20GitHub%20+%20Hexo%20+%20Fluid%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E6%80%A7%E5%8C%96%E5%8D%9A%E5%AE%A2%EF%BC%88%E9%99%84%E9%AD%94%E6%94%B9%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%89/"/>
     <url>/2025/04/05/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%EF%BC%9A%E4%BD%BF%E7%94%A8%20GitHub%20+%20Hexo%20+%20Fluid%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E6%80%A7%E5%8C%96%E5%8D%9A%E5%AE%A2%EF%BC%88%E9%99%84%E9%AD%94%E6%94%B9%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%89/</url>
