@@ -20,29 +20,22 @@
             <meta name="keywords" content="">
             <meta name="referrer" content="no-referrer" />
             
-              <meta name="description" content="错误截图： 解决方案：检查redis的redis-server.exe是否启动，如果没启动则不会运行。 如何启动：找到redis的安装目录，在路径下启动cmd，然后输入如下指令： 1redis-server.exe redis.windows.conf  如果出现下图这样，则证明启动成功。 如果跟我一样，出现如下错误： 那么还需要进行如下操作（依然在redis路径下输入指令）： 12345redi">
+              <meta name="description" content="题目链接：1. 两数之和 - 力扣（LeetCode）题目概述： 在一个数组中找到两个不同的元素使得和为target，返回其数组下标。 暴力解法思路： 通过两层循环穷举所有可能的元素组合，找到满足条件的两个数 1234567891011class Solution &#123;public:    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）">
-<meta property="og:url" content="http://example.com/2025/04/14/%E8%A7%A3%E5%86%B3redis%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88Cannot%20connect%20to%20server%20'localhost'.Check%20log%20for%20details.%EF%BC%89/index.html">
+<meta property="og:title" content="力扣hot100——1.两数之和（从暴力到最优）">
+<meta property="og:url" content="http://example.com/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%941.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%EF%BC%88%E4%BB%8E%E6%9A%B4%E5%8A%9B%E5%88%B0%E6%9C%80%E4%BC%98%EF%BC%89/index.html">
 <meta property="og:site_name" content="林下清风">
-<meta property="og:description" content="错误截图： 解决方案：检查redis的redis-server.exe是否启动，如果没启动则不会运行。 如何启动：找到redis的安装目录，在路径下启动cmd，然后输入如下指令： 1redis-server.exe redis.windows.conf  如果出现下图这样，则证明启动成功。 如果跟我一样，出现如下错误： 那么还需要进行如下操作（依然在redis路径下输入指令）： 12345redi">
+<meta property="og:description" content="题目链接：1. 两数之和 - 力扣（LeetCode）题目概述： 在一个数组中找到两个不同的元素使得和为target，返回其数组下标。 暴力解法思路： 通过两层循环穷举所有可能的元素组合，找到满足条件的两个数 1234567891011class Solution &#123;public:    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nu">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/techstream/mypicture/raw/master/img/20250414210212196.png">
-<meta property="og:image" content="https://gitee.com/techstream/mypicture/raw/master/img/20250414210826597.png">
-<meta property="og:image" content="https://gitee.com/techstream/mypicture/raw/master/img/20250414211007762.png">
-<meta property="og:image" content="https://gitee.com/techstream/mypicture/raw/master/img/20250414204345825.png">
-<meta property="og:image" content="https://gitee.com/techstream/mypicture/raw/master/img/20250414211516273.png">
-<meta property="article:published_time" content="2025-04-14T13:23:47.078Z">
-<meta property="article:modified_time" content="2025-04-14T13:24:44.201Z">
+<meta property="article:published_time" content="2025-04-15T05:45:00.000Z">
+<meta property="article:modified_time" content="2025-04-15T05:45:30.557Z">
 <meta property="article:author" content="林下清风">
-<meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://gitee.com/techstream/mypicture/raw/master/img/20250414210212196.png">
                 
                     
                         
                               <title>
-                                解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.） - 林下清风
+                                力扣hot100——1.两数之和（从暴力到最优） - 林下清风
                               </title>
 
                               <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
@@ -233,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）"></span>
+            <span id="subtitle" data-typed-text="力扣hot100——1.两数之和（从暴力到最优）"></span>
           
         </div>
 
@@ -244,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-14 21:23" pubdate>
-          2025年4月14日 晚上
+        <time datetime="2025-04-15 13:45" pubdate>
+          2025年4月15日 下午
         </time>
       </span>
     
@@ -256,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          199 字
+          453 字
         
       </span>
     
@@ -267,7 +260,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -313,23 +306,27 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）</h1>
+            <h1 id="seo-header">力扣hot100——1.两数之和（从暴力到最优）</h1>
             
             
               <div class="markdown-body">
                 
-                <p><strong>错误截图：</strong><br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414210212196.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p><strong>解决方案：</strong><br>检查redis的redis-server.exe是否启动，如果没启动则不会运行。</p>
-<p><strong>如何启动：</strong><br>找到redis的安装目录，在路径下启动cmd，然后输入如下指令：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">redis-server<span class="hljs-selector-class">.exe</span> redis<span class="hljs-selector-class">.windows</span>.conf<br></code></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414210826597.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>如果出现下图这样，则证明启动成功。<br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414211007762.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>如果跟我一样，出现如下错误：<br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414204345825.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>那么还需要进行如下操作（依然在redis路径下输入指令）：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk">redis-cli.exe<br>auth 你设置的密码   <span class="hljs-regexp">//</span>如果你没有设置密码则不需要执行这一步<br>shutdown<br><span class="hljs-keyword">exit</span><br>redis-server.exe redis.windows.conf<br></code></pre></td></tr></table></figure>
+                <p><strong>题目链接：</strong><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked">1. 两数之和 - 力扣（LeetCode）</a><br><strong>题目概述：</strong> 在一个数组中找到两个不同的元素使得和为target，返回其数组下标。</p>
+<h1 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h1><p><strong>思路：</strong> 通过两层循环穷举所有可能的元素组合，找到满足条件的两个数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">twoSum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=i<span class="hljs-number">+1</span>;j&lt;nums.<span class="hljs-built_in">size</span>();j++)&#123;<br>                <span class="hljs-keyword">if</span>(nums[i]+nums[j]==target) <span class="hljs-keyword">return</span> &#123;i,j&#125;; <span class="hljs-comment">//满足要求返回结果</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> &#123;&#125;;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<p>最后就可以成功启动edis-server.exe，同时redis也可以成功加载数据库。<br><img src="https://gitee.com/techstream/mypicture/raw/master/img/20250414211516273.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>永远不要因承认错误而感到羞耻，因为承认错误也可以解释作你今天更聪敏。——马罗</p>
+<ul>
+<li>时间复杂度：O(n <sup>2</sup>) ，n为数组长度</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h1 id="哈希表解法"><a href="#哈希表解法" class="headerlink" title="哈希表解法"></a>哈希表解法</h1><p>用unordered_map存放遍历过的元素，遍历数组的时候查询unordered_map是否出现某个元素与之相加等于target。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">twoSum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; num_set;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">auto</span> temp=num_set.<span class="hljs-built_in">find</span>(target-nums[i]);<br>            <span class="hljs-keyword">if</span>(temp!=num_set.<span class="hljs-built_in">end</span>())&#123;<span class="hljs-comment">//找到符合条件的</span><br>                <span class="hljs-keyword">return</span> &#123;i,temp-&gt;second&#125;; <span class="hljs-comment">//返回数组下标</span><br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//没找到</span><br>                num_set.<span class="hljs-built_in">insert</span>(&#123;nums[i],i&#125;); <span class="hljs-comment">//插入目前遍历的元素</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> &#123;&#125;;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>时间复杂度：O (n)</li>
+<li>空间复杂度：O (n) 哈希表的存储空间</li>
+</ul>
+<h1 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h1><h2 id="为什么哈希表解法的效率更高"><a href="#为什么哈希表解法的效率更高" class="headerlink" title="为什么哈希表解法的效率更高"></a>为什么哈希表解法的效率更高</h2><p>哈希表解法可以看作是对暴力解法的优化，暴力解法第一层for循环依次枚举各个数，第二层for循环再遍历一遍数组，寻找能够与第一次for循环所枚举的数相匹配的元素（两个相加等于target），相当于用O(n)的时间寻找对应的元素；对于哈希表来说，哈希表的查询效率是O(1)，相当于用O(1)的时间寻找对应的元素。</p>
 
                 
               </div>
@@ -338,13 +335,27 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/redis/" class="print-no-link">#redis</a>
-      
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8A%9B%E6%89%A3hot100/" class="category-chain-item">力扣hot100</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
     </div>
+  
   
 </div>
 
@@ -354,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）</div>
-      <div>http://example.com/2025/04/14/解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）/</div>
+      <div>力扣hot100——1.两数之和（从暴力到最优）</div>
+      <div>http://example.com/2025/04/15/力扣hot100——1.两数之和（从暴力到最优）/</div>
     </div>
     <div class="license-meta">
       
@@ -367,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年4月14日</div>
+          <div>2025年4月15日</div>
         </div>
       
       
@@ -399,9 +410,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%941.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%EF%BC%88%E4%BB%8E%E6%9A%B4%E5%8A%9B%E5%88%B0%E6%9C%80%E4%BC%98%EF%BC%89/" title="力扣hot100——1.两数之和（从暴力到最优）">
+                      <a href="/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%9449.%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" title="力扣hot100——49.字母异位词分组">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">力扣hot100——1.两数之和（从暴力到最优）</span>
+                        <span class="hidden-mobile">力扣hot100——49.字母异位词分组</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -409,8 +420,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/05/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%EF%BC%9A%E4%BD%BF%E7%94%A8%20GitHub%20+%20Hexo%20+%20Fluid%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E6%80%A7%E5%8C%96%E5%8D%9A%E5%AE%A2%EF%BC%88%E9%99%84%E9%AD%94%E6%94%B9%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%89/" title="从零开始：使用 GitHub + Hexo + Fluid 搭建个性化博客（附魔改与使用教程）">
-                        <span class="hidden-mobile">从零开始：使用 GitHub + Hexo + Fluid 搭建个性化博客（附魔改与使用教程）</span>
+                      <a href="/2025/04/14/%E8%A7%A3%E5%86%B3redis%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88Cannot%20connect%20to%20server%20&#39;localhost&#39;.Check%20log%20for%20details.%EF%BC%89/" title="解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）">
+                        <span class="hidden-mobile">解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

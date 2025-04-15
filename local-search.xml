@@ -4,6 +4,63 @@
   
   
   <entry>
+    <title>力扣hot100——128.最长连续序列</title>
+    <link href="/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%94128.%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/"/>
+    <url>/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%94128.%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<p><strong>题目链接：</strong><a href="https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-100-liked">128. 最长连续序列 - 力扣（LeetCode）</a><br><strong>思路：</strong> 由于时间复杂度要求O(n)，所以排除排序的可能，排序的时间复杂度是O(nlogn)。<br>考虑使用哈希表，哈希表将查询的时间降到O(1)；并且进行剪枝操作，遍历元素是x，如果x-1也在哈希表中，那么x-1为起点的序列一定比x为起点的序列长，此时跳过此次循环，执行下一次循环。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">longestConsecutive</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">us</span>(nums.<span class="hljs-built_in">begin</span>(),nums.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//将数组转成哈希表</span><br>        <span class="hljs-type">int</span> res=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i:us)&#123;<br>            <span class="hljs-keyword">if</span>(us.<span class="hljs-built_in">contains</span>(i<span class="hljs-number">-1</span>))&#123;<span class="hljs-comment">//i-1为起点的序列一定更长</span><br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            <span class="hljs-type">int</span> j=i<span class="hljs-number">+1</span>;<br>            <span class="hljs-keyword">while</span>(us.<span class="hljs-built_in">contains</span>(j))&#123;<span class="hljs-comment">//检查下一个数是否在集合中</span><br>                j++;<br>            &#125;<br>            res=<span class="hljs-built_in">max</span>(j-i,res);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><ul><li>时间复杂度：O(n)，所有元素最多访问两次（一次作为起点，一次被序列包含），n代表元素个数</li><li>空间复杂度：O(n)</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>力扣hot100</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>力扣hot100——49.字母异位词分组</title>
+    <link href="/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%9449.%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/"/>
+    <url>/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%9449.%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/</url>
+    
+    <content type="html"><![CDATA[<p><strong>题目链接：</strong><a href="https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked">49. 字母异位词分组 - 力扣（LeetCode）</a><br><strong>题目概述：</strong> 将组成字母相同的字符串放在一起</p><p><strong>思路：</strong><br>所谓“字母异位词”的共同点是组成的字母元素相同，个数相同但是顺序不同。我们可以将所有的字符串按照字典序排列，得到一个新的字符串，字母异位词得到的新字符串相同，然后利用unordered_map存储，以字典序字符串作为key值，value存放字母异位词。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;string&gt;&gt; <span class="hljs-built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) &#123;<br>        unordered_map&lt;string,vector&lt;string&gt;&gt; um;<br>        vector&lt;vector&lt;string&gt;&gt; res;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;strs.<span class="hljs-built_in">size</span>();i++)&#123;<br>            string s=strs[i];<br>            <span class="hljs-built_in">sort</span>(s.<span class="hljs-built_in">begin</span>(),s.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//将字符串按照字典序重新排序</span><br>            um[s].<span class="hljs-built_in">push_back</span>(strs[i]);<span class="hljs-comment">//字典序相同的字符串放在一个vector里</span><br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it=um.<span class="hljs-built_in">begin</span>();it!=um.<span class="hljs-built_in">end</span>();it++)&#123;<br>            res.<span class="hljs-built_in">push_back</span>(it-&gt;second);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><ul><li>时间复杂度：O(nmlogm)，n代表字符串数组的长度，m是字符串平均长度，字符串排序的时间复杂度是O(mlogm)。</li><li>空间复杂度：O(nm)</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>力扣hot100</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>力扣hot100——1.两数之和（从暴力到最优）</title>
+    <link href="/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%941.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%EF%BC%88%E4%BB%8E%E6%9A%B4%E5%8A%9B%E5%88%B0%E6%9C%80%E4%BC%98%EF%BC%89/"/>
+    <url>/2025/04/15/%E5%8A%9B%E6%89%A3hot100%E2%80%94%E2%80%941.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%EF%BC%88%E4%BB%8E%E6%9A%B4%E5%8A%9B%E5%88%B0%E6%9C%80%E4%BC%98%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<p><strong>题目链接：</strong><a href="https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked">1. 两数之和 - 力扣（LeetCode）</a><br><strong>题目概述：</strong> 在一个数组中找到两个不同的元素使得和为target，返回其数组下标。</p><h1 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h1><p><strong>思路：</strong> 通过两层循环穷举所有可能的元素组合，找到满足条件的两个数</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">twoSum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=i<span class="hljs-number">+1</span>;j&lt;nums.<span class="hljs-built_in">size</span>();j++)&#123;<br>                <span class="hljs-keyword">if</span>(nums[i]+nums[j]==target) <span class="hljs-keyword">return</span> &#123;i,j&#125;; <span class="hljs-comment">//满足要求返回结果</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> &#123;&#125;;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><ul><li>时间复杂度：O(n <sup>2</sup>) ，n为数组长度</li><li>空间复杂度：O(1)</li></ul><h1 id="哈希表解法"><a href="#哈希表解法" class="headerlink" title="哈希表解法"></a>哈希表解法</h1><p>用unordered_map存放遍历过的元素，遍历数组的时候查询unordered_map是否出现某个元素与之相加等于target。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">twoSum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; num_set;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">auto</span> temp=num_set.<span class="hljs-built_in">find</span>(target-nums[i]);<br>            <span class="hljs-keyword">if</span>(temp!=num_set.<span class="hljs-built_in">end</span>())&#123;<span class="hljs-comment">//找到符合条件的</span><br>                <span class="hljs-keyword">return</span> &#123;i,temp-&gt;second&#125;; <span class="hljs-comment">//返回数组下标</span><br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//没找到</span><br>                num_set.<span class="hljs-built_in">insert</span>(&#123;nums[i],i&#125;); <span class="hljs-comment">//插入目前遍历的元素</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> &#123;&#125;;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><ul><li>时间复杂度：O (n)</li><li>空间复杂度：O (n) 哈希表的存储空间</li></ul><h1 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h1><h2 id="为什么哈希表解法的效率更高"><a href="#为什么哈希表解法的效率更高" class="headerlink" title="为什么哈希表解法的效率更高"></a>为什么哈希表解法的效率更高</h2><p>哈希表解法可以看作是对暴力解法的优化，暴力解法第一层for循环依次枚举各个数，第二层for循环再遍历一遍数组，寻找能够与第一次for循环所枚举的数相匹配的元素（两个相加等于target），相当于用O(n)的时间寻找对应的元素；对于哈希表来说，哈希表的查询效率是O(1)，相当于用O(1)的时间寻找对应的元素。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>力扣hot100</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>解决redis无法加载数据库（Cannot connect to server &#39;localhost&#39;.Check log for details.）</title>
     <link href="/2025/04/14/%E8%A7%A3%E5%86%B3redis%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88Cannot%20connect%20to%20server%20&#39;localhost&#39;.Check%20log%20for%20details.%EF%BC%89/"/>
     <url>/2025/04/14/%E8%A7%A3%E5%86%B3redis%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88Cannot%20connect%20to%20server%20&#39;localhost&#39;.Check%20log%20for%20details.%EF%BC%89/</url>
